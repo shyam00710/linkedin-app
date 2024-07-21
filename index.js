@@ -1,8 +1,7 @@
 import contractABI from "./contractABI.json";
 
-const contractAddress = "0xd7Ca4e99F7C171B9ea2De80d3363c47009afaC5F";
-let web3 = new Web3(window.ethereum);
-let contract = new web3.eth.Contract(contractABI, contractAddress);
+const contractAddress = "0xYourContractAddressHere";
+
 if (window.ethereum) {
   window.web3 = new Web3(window.ethereum);
 } else {
