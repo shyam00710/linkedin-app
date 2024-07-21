@@ -11,6 +11,17 @@
     <h1>LinkedIn-like App</h1>
     <div class="connect">
       <button id="connectWalletBtn">Connect Wallet</button>
+      <script>  document.getElementById('connect-button').addEventListener('click', event => {
+   let account;
+   let button = event.target;
+   ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+     account = accounts[0];
+     console.log(account);
+     button.textContent = account;
+   });
+...
+ });
+      </script>
       <div id="userAddress"></div>
       <div id="connectMessage">Please connect your wallet.</div>
     </div>
