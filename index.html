@@ -15,7 +15,7 @@
       <div id="connectMessage">Please connect your wallet.</div>
     </div>
     
-    <form id="profileForm">
+    <form id="profileForm" style="display: none;">
       <h2>Create Profile</h2>
       <input type="text" id="name" placeholder="Name" required>
       <input type="text" id="profession" placeholder="Profession" required>
@@ -23,7 +23,7 @@
       <button type="submit">Create Profile</button>
     </form>
     
-    <form id="updateProfileForm">
+    <form id="updateProfileForm" style="display: none;">
       <h2>Update Profile</h2>
       <input type="text" id="updateName" placeholder="Name" required>
       <input type="text" id="updateProfession" placeholder="Profession" required>
@@ -31,27 +31,27 @@
       <button type="submit">Update Profile</button>
     </form>
     
-    <form id="jobForm">
+    <form id="jobForm" style="display: none;">
       <h2>Post Job</h2>
       <input type="text" id="jobTitle" placeholder="Job Title" required>
       <textarea id="jobDescription" placeholder="Job Description" required></textarea>
       <button type="submit">Post Job</button>
     </form>
     
-    <form id="applyForm">
+    <form id="applyForm" style="display: none;">
       <h2>Apply for Job</h2>
       <input type="number" id="jobId" placeholder="Job ID" required>
       <button type="submit">Apply</button>
     </form>
     
-    <form id="viewProfileForm">
+    <form id="viewProfileForm" style="display: none;">
       <h2>View Profile</h2>
       <input type="text" id="profileAddress" placeholder="User Address" required>
       <button type="submit">View Profile</button>
       <div id="profileResult"></div>
     </form>
     
-    <form id="viewApplicantsForm">
+    <form id="viewApplicantsForm" style="display: none;">
       <h2>View Applicants</h2>
       <input type="number" id="applicantsJobId" placeholder="Job ID" required>
       <button type="submit">View Applicants</button>
@@ -59,8 +59,8 @@
     </form>
   </div>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
-    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-    <script src="src/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+  <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+  <script src="src/index.js"></script>
 </body>
 </html>
