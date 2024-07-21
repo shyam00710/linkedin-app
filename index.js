@@ -2,30 +2,24 @@ import contractABI from "./contractABI.json";
 
 const contractAddress = "0xYourContractAddressHere";
 
-if (window.ethereum) {
-  window.web3 = new Web3(window.ethereum);
-} else {
-  console.error("No web3 provider detected. Please install MetaMask.");
-  document.getElementById("connectMessage").innerText =
-    "No web3 provider detected. Please install MetaMask.";
-}
 
+let web3 = new Web3(window.ethereum);
 let contract = new web3.eth.Contract(contractABI, contractAddress);
 
 async function connectWallet() {
   if (window.ethereum) {
-    try {
-      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-      if (accounts.length > 0) {
-        setConnected(accounts[0]);
-        console.log("Connected account:", accounts[0]);
-      }
-    } catch (err) {
-      if (err.code === 4001) {
-        console.log("Please connect to MetaMask.");
-      } else {
-        console.error(err);
-      }
+    const accounts = await window.ethereum
+      .request({ method: "eth_requestAccounts" })
+      .catch((err) => {
+        if (err.code === 4001) {
+          console.log("Please connect to MetaMask.");
+        } else {
+          console.error(err);
+        }
+      });
+    setConnected(accounts[0]);
+    if (accounts[0]) {
+      console.log("We have an account");
     }
   } else {
     console.error("No web3 provider detected");
